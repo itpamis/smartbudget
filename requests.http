@@ -1,0 +1,67 @@
+### Criar um gasto
+POST http://localhost:8081/api/expenses
+Content-Type: application/json
+
+{
+  "description": "Supermercado",
+  "amount": 150.90,
+  "category": "Alimentação",
+  "date": "2026-09-29"
+}
+
+
+### Listar gastos
+GET http://localhost:8081/api/expenses
+
+
+### Teste da IA
+POST http://localhost:8081/api/ai/chat
+Content-Type: application/json
+
+{
+  "message": "Quanto eu gastei entre 01/09/2026 e 30/09/2026?"
+}
+
+### Criar segundo gasto
+POST http://localhost:8081/api/expenses
+Content-Type: application/json
+
+{
+  "description": "Combustível",
+  "amount": 100.00,
+  "category": "Transporte",
+  "date": "2026-08-15"
+}
+
+### Perguntar gastos de agosto
+POST http://localhost:8081/api/ai/chat
+Content-Type: application/json
+
+{
+  "message": "Quanto eu gastei em agosto de 2026?"
+}
+
+### Teste completo: Audio → Whisper → Llama → Banco
+### Teste completo: Audio → Whisper → Llama → Banco
+# @timeout 120000
+POST http://localhost:8081/api/ai/audio
+Content-Type: multipart/form-data; boundary=----SmartBudgetBoundary
+
+------SmartBudgetBoundary
+Content-Disposition: form-data; name="audio"; filename="audio.wav"
+Content-Type: audio/wav
+
+< C:\Users\gusto\audio.wav
+------SmartBudgetBoundary--
+POST http://localhost:8081/api/ai/audio
+Content-Type: multipart/form-data; boundary=----SmartBudgetBoundary
+
+------SmartBudgetBoundary
+Content-Disposition: form-data; name="audio"; filename="audio.wav"
+Content-Type: audio/wav
+
+< C:\Users\gusto\audio.wav
+------SmartBudgetBoundary--
+
+### Teste TTS
+GET http://localhost:8081/api/ai/audio/test

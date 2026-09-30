@@ -1,0 +1,26 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Environment / secrets
+.env
+*.env
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+
+# Local AI models
+*.onnx
+*.onnx.json
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
